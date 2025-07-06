@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Для Маргариты 🌹</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #fce4ec);
+      color: #ad1457;
+      text-align: center;
+      padding: 20px;
+      transition: background 1s ease;
+    }
+    .box {
+      background: #ffe4ec;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #f8bbd0;
+      margin: 20px auto;
+      max-width: 420px;
+      font-size: 24px;
+      min-height: 100px;
+    }
+    button {
+      background-color: #f06292;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Маргарита 🌹</h1>
+  <p>Для тебя — самые тёплые слова:</p>
+  <div class="box" id="output">Нажми, чтобы почувствовать тепло 💖</div>
+  <button onclick="generatePhrase()">Скажи мне ещё!</button>
+
+  <script>
+    const modifiers = ["самая", "нежная как", "сияющая как", "невероятно", "бесконечно", "по-настоящему", "лучшая в мире", "словно сказка", "словно музыка", "как весенний луч"];
+    const adjectives = ["нежная", "милая", "солнечная", "красивая", "умная", "очаровательная", "прекрасная", "яркая", "добрая", "радостная", "неповторимая", "вдохновляющая", "тёплая", "чуткая", "загадочная"];
+    const nouns = ["звезда", "весна", "душа", "радость", "мечта", "муза", "лепесток", "улыбка", "свет", "песня", "сердце"];
+
+    function generatePhrase() {
+      const m = modifiers[Math.floor(Math.random() * modifiers.length)];
+      const a = adjectives[Math.floor(Math.random() * adjectives.length)];
+      const n = nouns[Math.floor(Math.random() * nouns.length)];
+      const phrase = `Маргарита, ты ${m} ${a} ${n}.`;
+      document.getElementById("output").textContent = phrase;
+      changeBackground();
+    }
+
+    function changeBackground() {
+      const colors = [
+        '#fce4ec', '#f3e5f5', '#e3f2fd', '#e0f7fa', '#f1f8e9', '#fff9c4', '#ffecb3',
+        '#ffe0b2', '#f8bbd0', '#d1c4e9'
+      ];
+      const c1 = colors[Math.floor(Math.random() * colors.length)];
+      const c2 = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.background = `linear-gradient(135deg, ${c1}, ${c2})`;
+    }
+  </script>
+</body>
+</html>
